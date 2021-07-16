@@ -65,15 +65,24 @@ void mergeTwoArray(address *node, int nL, int nR)
 
 void mergeSort(address *node, int rightIdx)
 {
-	int i;
+	int i, midIdx;
+	address L, R;
+	infotype left[midIdx], right[rightIdx];
 
-    int midIdx = (rightIdx-1)/2;
+    midIdx = (rightIdx-1)/2;
 	for(i = 0; i < midIdx; i++){
-		(*node)->left->info[i] = (*node)->info[i]; 
+		left[i] = (*node)->info[i]; 
 	}
 	for(i = midIdx; i < rightIdx; i++){
-		(*node)->right->info[i-midIdx] = (*node)->info[i];
+		right[i-midIdx] = (*node)->info[i];
 	}
+	
+	L = createNode(left, midIdx);
+	R = createNode(right, rightIdx);
+	
+	(*node)->left = L;
+	(*node)->right = R;
+	
 	mergeSort(&(*node)->left, midIdx);
 	mergeSort(&(*node)->right, rightIdx-midIdx);
 	mergeTwoArray(&(*node), midIdx, rightIdx-midIdx);
