@@ -46,23 +46,33 @@ void mergeTwoArray(address *node, int nL, int nR)
     // int nL = sizeof(l)/sizeof(int);
     // int nR = sizeof(r)/sizeof(int);
     int i=0,j=0,k=0;
+    nL = nL + 1;
+    
     while(i < nL && j < nR)
     {
-        if((*node)->left->info[i] < (*node)->right->info[j])
-            (*node)->info[k++] = (*node)->left->info[i++];
-        else
-            (*node)->info[k++] = (*node)->right->info[j++];
+        if((*node)->left->info[i] < (*node)->right->info[j]){
+        	(*node)->info[k] = (*node)->left->info[i];
+        	i++;
+		}
+        else {
+        	(*node)->info[k] = (*node)->right->info[j];
+        	j++;
+		}
+		k++;
     }
     while(i < nL)
     {
-        (*node)->info[k++] = (*node)->left->info[i++];
+        (*node)->info[k] = (*node)->left->info[i];
+        k++;
+        i++;
     }
     while(j < nR)
     {
-        (*node)->info[k++] = (*node)->right->info[j++];
+        (*node)->info[k] = (*node)->right->info[j];
+        k++;
+        j++;
     }
 }
-
 void mergeSort(address *node, int rightIdx)
 {
 	if (rightIdx > 0){
