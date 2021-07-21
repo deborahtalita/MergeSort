@@ -65,25 +65,27 @@ void mergeTwoArray(address *node, int nL, int nR)
 
 void mergeSort(address *node, int rightIdx)
 {
-	int i, midIdx;
-	address L, R;
-	infotype left[midIdx], right[rightIdx];
+	if (rightIdx > 0){
+		int i, midIdx;
+		address L, R;
+		infotype left[midIdx], right[rightIdx];
 
-    midIdx = (rightIdx-1)/2;
-	for(i = 0; i < midIdx; i++){
-		left[i] = (*node)->info[i]; 
+   		midIdx = (rightIdx-1)/2;
+		for(i = 0; i < midIdx+1; i++){
+			left[i] = (*node)->info[i]; 
+		}
+		for(i = midIdx; i < rightIdx; i++){
+			right[i-midIdx] = (*node)->info[i];
+		}
+	
+		L = createNode(left, midIdx+1);
+		R = createNode(right, rightIdx);
+	
+		(*node)->left = L;
+		(*node)->right = R;
+	
+		mergeSort(&(*node)->left, midIdx);
+		mergeSort(&(*node)->right, rightIdx-midIdx);
+		mergeTwoArray(&(*node), midIdx, rightIdx-midIdx);
 	}
-	for(i = midIdx; i < rightIdx; i++){
-		right[i-midIdx] = (*node)->info[i];
-	}
-	
-	L = createNode(left, midIdx);
-	R = createNode(right, rightIdx);
-	
-	(*node)->left = L;
-	(*node)->right = R;
-	
-	mergeSort(&(*node)->left, midIdx);
-	mergeSort(&(*node)->right, rightIdx-midIdx);
-	mergeTwoArray(&(*node), midIdx, rightIdx-midIdx);
 }
