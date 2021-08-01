@@ -1,0 +1,33 @@
+								
+
+					DESKRIPSI
+
+	Program Merge Sort ini merupakan implementasi dari konsep Binary tree alokasi dinamis.
+	Tujuan pembuatan program adalah untuk mengurutkan kumpulan angka 
+	dengan tipe pengurutan data ascending maupun descending.
+	
+	note:
+	Ascending merupakan tipe pengurutan data yang dimulai dari data terkecil hingga terbesar. 
+	Descending adalah tipe pengurutan data dari yang terbesar ke yang terkecil.
+
+
+					PANDUAN
+
+	Sebelum anda menggunakan program disarankan untuk membaca terlebih dahulu
+	Petunjuk di bawah ini :
+						
+	1. Terdapat 5 opsi pada menu
+	2. Anda diharuskan menginput satu angka sebagai opsi yang anda pilih [1-5]
+	   - Nomor 1 untuk melakukan proses sorting dari kumpulan angka yang diinput secara manual oleh user
+	   - Nomor 2 untuk melakukan proses sorting dari kumpulan angka yang diinput secara random oleh program
+	   - Nomor 3 untuk melakukan proses sorting dari kumpulan angka yang diinput dari file yang telah ada
+	   - Nomor 4 untuk menampilkan panduan penggunaan program
+	   - Nomor 5 untuk menampilkan identitas pembuat program
+	   - Nomor 6 untuk keluar dari program
+
+			
+								>> tekan ENTER 2X untuk kembali ke MENU
+
+	
+
+
