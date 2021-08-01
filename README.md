@@ -1,4 +1,4 @@
-# merge-sort---binary-tree
+# MergeSort
 
 Tugas Besar SDA Praktek
 
